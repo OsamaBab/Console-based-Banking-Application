@@ -20,8 +20,8 @@ class Account:
             account_number (str): Account number. Generated if not provided.
             balance (float): Initial balance. Default is 0.
             account_type (str): Type of account (e.g., "savings", "current"). Default is "savings".
-            customer_id (str): ID of the customer associated with the account.
-            transactions (list): List of transaction.
+            cust_id (str): ID of the customer associated with the account.
+            transactions (list): List of transaction. dafult is none value
         """
         myself.acc_number = acc_number or myself.generate_account_number()
         myself.balance = balance
@@ -29,7 +29,7 @@ class Account:
         myself.cust_id = cust_id 
         myself.transactions = transactions if transactions is not None else []
 
-        def generate_account_number(self):
+        def generate_account_number(myself):
             """
             Generate a random 6-digit account number."""
             """
@@ -38,4 +38,4 @@ class Account:
             Returns:
                 str: A randomly generated 6-digit account number.
             """
-            return ''.join(random.choices(string.digits, k=6))
+            return ''.join(random.choices(string.digits, k=7))
