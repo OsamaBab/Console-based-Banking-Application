@@ -57,7 +57,7 @@ def main():
     elif page == "Logout":
         show_logout(bank) # redirect to logout page
         
-
+# Call main page as an entry point to the app
 if __name__ == "__main__":
     main()
 
