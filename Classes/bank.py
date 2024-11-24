@@ -1,3 +1,6 @@
+# Import required libraries and files
+import streamlit as st
+
 class Bank:
     """
     Discription:
@@ -16,3 +19,14 @@ class Bank:
         myself.bank_name = bank_name
         myself.phone = phone
         myself.address = address
+
+    def show_bank_info(self):
+        """
+        Functon to show the bank information using the bank class object parameters
+            Reurns:
+            bank information as strings in sidebar using Streamlit
+        """
+        st.sidebar.markdown("Bradford College" ) 
+        st.sidebar.text(f"Bank Name: {self.bank_name}")
+        st.sidebar.text(f"Email: {self.contact}")
+        st.sidebar.text(f"Address: {self.address}")
