@@ -9,7 +9,7 @@ The System Features.
 o	Customers can select accounts to deposit funds.
 o	Customers can withdraw funds if they have sufficient balances.
 o	Customers can transfer funds between the same accounts’ types while ensuring they have sufficient balances.
-•	Customers Logout: Confirmed logout process using 
+•	Customers Logout: Confirmed logout process using. 
 •	Error Handling: The system includes comprehensive error messages for both invalid inputs and operations.
 •	Data Persistence: All the bank customers’ data including their accounts and transactions data are loaded, saved and stored in a JSON file.
 
