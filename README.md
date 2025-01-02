@@ -1,7 +1,7 @@
 Bank Management Application
 Project Overview
 This bank management system is built using Streamlit and Python programming Language. It enables non-registered users to register memberships accounts, log in to their accounts, and perform different fund transactions’ types such as deposits, withdrawals, and transfers fund across multiple account types. This bank system is designed with a focus on both security and simplicity aspects, ensuring a seamless administrators’ and customers’ experience.
-The System Features
+The System Features.
 •	Users Registration: Non-registered users can register their membership with unique customer ids and account types such as Current, Saving, Mortgage, or Business.
 •	Customers Login: Secure login process using customers’ accounts numbers with their associated passwords.
 •	Account Management: The bank customers are able to view their accounts, balances and all transaction histories.
