@@ -1,1 +1,47 @@
-{}
+{
+    "ID9683": {
+        "cust_id": "ID9683",
+        "cust_name": "user1",
+        "password": "1",
+        "email": "1",
+        "accounts": [
+            {
+                "account_number": "4657375",
+                "balance": 50.0,
+                "account_type": "Current",
+                "cust_id": "ID9683",
+                "transactions": [
+                    {
+                        "time": "2024-12-31 15:00:13",
+                        "type": "transfer to 9783262",
+                        "amount": 150.0
+                    }
+                ]
+            },
+            {
+                "account_number": "7427470",
+                "balance": 0.0,
+                "account_type": "Saving",
+                "cust_id": "ID9683",
+                "transactions": []
+            }
+        ]
+    },
+    "ID6269": {
+        "cust_id": "ID6269",
+        "cust_name": "user2",
+        "password": "2",
+        "email": "2",
+        "accounts": [
+            {
+                "account_number": "9783262",
+                "balance": 150.0,
+                "account_type": "Current",
+                "cust_id": "ID6269",
+                "transactions": [
+                    
+                ]
+            }
+        ]
+    }
+}
