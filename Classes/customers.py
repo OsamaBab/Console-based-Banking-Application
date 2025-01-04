@@ -1,24 +1,49 @@
+#from .account import Account
 
 class Customer:
-
     """
     Discription:
-    A class represents a bank customer details, associated accounts, 
+    This class represents a bank customer with personal details, associated accounts, 
     and login credentials.
-        Args:
-            cust_id (str): Unique customer identifier for each customer.
-            name (str): Full name of the customer.
-            password (str): Encrypted password for customer login.
-            email (str): Email address of the customer for login.
-            cust_accounts ([]): List of associated Account instances for each customer. Default is None or an empty list.
     """
-    def __init__(myself, cust_id, name, password=None, email=None, cust_accounts=None):
+    def __init__(self, cust_id, cust_name, password=None, email=None, accounts=None):
         """
         Discription:
-        Initialise the Customer instance.
+        this method define the class attributes and initialise a new Customer instance.
+        Args:
+            cust_id (str): A unique customer identifier.
+            cust_name (str): The name of the customer.
+            password (str): The password for login.It is empty by default
+            email (str): The email address of the customer.It is empty by default
+            accounts (list): The list of Accounts that associated to a customer. It is empty by default.
         """
-        myself.cust_id = cust_id
-        myself.name = name
-        myself.password=password
-        myself.email=email
-        myself.cust_accounts = cust_accounts if cust_accounts else []
+        self.cust_id = cust_id
+        self.cust_name = cust_name
+        self.password=password
+        self.email=email
+        self.accounts = accounts if accounts else []
+
+    def add_account(self, account):
+        """
+        Discription:
+        This method adds new accounts to customers account list.
+        """
+        self.accounts.append(account)
+
+    def to_dictionary(self):
+        """
+        Discription:
+        Return Method to serialise and convert the Customer object into a JSON dictionary compatible format.
+        Returns:
+            dict: Dictionary representation of the customer, including accounts.
+        """
+        return {
+            #Return
+            "cust_id": self.cust_id,
+            "cust_name": self.cust_name,
+            "password": self.password,
+            "email":self.email,
+            # Serializsimg accounts
+            "accounts": [account.to_dictionary() for account in self.accounts]  
+        }
+
