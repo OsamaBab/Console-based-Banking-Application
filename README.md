@@ -27,7 +27,7 @@ This bank management system is built using Streamlit and Python programming Lang
   git clone https://github.com/OsamaBab/Console-based-Banking-Application.git. 
 3. Direct to the directory of the project: cd Console-based-Banking-Application
 4. Install the required dependencies: pip install -r requirements.txt.
-5. Run the bank application using this command line: streamlit run home.py
+5. Run the bank application using this command line: streamlit run main.py
 ### The Usage 
 1. Register a new customer: Navigate to the register page to create a new bank account via inputting your name, email, password, and selecting an account type.
 2. Login: Enter your account number, and your password to log in to your account.
@@ -63,7 +63,6 @@ This class represents a bank customer with personal details, associated accounts
 1. Init method initialises customers objects’ parameters such as ID, name, email, password, and accounts.
 2. Add account method adds new accounts to the customer's account list.
 3. To dictionary method serialises and converts accounts’ objects into a dictionary compatible format for JSON file.
-
 ### The License
 The license for this project is under the MIT License. For more enquires, See the LICENSE file 
 
