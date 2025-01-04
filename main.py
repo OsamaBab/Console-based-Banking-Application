@@ -1,64 +1,71 @@
-# Import the required libraries classes and pages
+# Import required files
 import streamlit as st
 from Classes.bank import Bank
-from pages.login import login_page
-from pages.dashboard import dashboard_page
-from pages.register import register_page
-from pages.deposit import deposit_page
-from pages.transfer import transfer_page
-from pages.withdraw import withdraw_page
-from pages.logout import show_logout
+from st_pages.login import login_page
+from st_pages.dashboard import dashboard_page
+from st_pages.register import register_page
+from st_pages.deposit import deposit_page
+from st_pages.transfer import transfer_page
+from st_pages.withdraw import withdraw_page
+from st_pages.logout import show_logout
 
 def main():
-   # st.set_page_config(page_title="Banking App", layout="wide")
-    
-    # Initialise session states if they don't exist
+    """
+    The main interface method to enable users to navigate between different pages
+    """
+    # Initialise session states to control on displaying pages based on each session
     if "authenticated" not in st.session_state:
         st.session_state["authenticated"] = False
         st.session_state["customer_id"] = None
-        st.session_state["current_page"] = "Login"  # Default the app to display login page
-
-    # Create a shared bank object instance details
+        st.session_state["current_page"] = "Login"  # Default to login page
+    # Create a bank instance with details
     bank = Bank(
     bank_name=" Osama Bank App",
-    contact=" 10593097@bradfordcollege.ac.uk",
+    contact=" osamabank.ac.uk",
     address=" 123 Great Horton Road, Bradford City"
     )
-
-# create Sidebar Navigation function
+    
+    # create Sidebar Navigation function
     def navigate():
         """
         function uses a radio button to handle page switching and maintains the selected page in st.session_state
         Returns:
         Update the the session of selected page from the list 
-
         """
+        # Print sidbar title
         st.sidebar.title("Navigation")
-        pages = ["Login", "Register", "Dashboard", "Transfer","Deposit", "Withdraw", "Logout"]
+        # Print sidbar pages names
+        pages = ["Login", "Register", "Dashboard", "Transfer","Deposit", "Withdraw","Logout"]
+        # List all pages names 
         selected_page = st.sidebar.radio("Go to", pages, index=pages.index(st.session_state["current_page"]))
-        st.session_state["current_page"] = selected_page  # Update current page seasion
+        # Update current the page seasion
+        st.session_state["current_page"] = selected_page  
+        # Retrive the selcted page from the pages list
         return selected_page
 
     # Main Bank App Logic
-    page = navigate() # Assign navigate function 
-    # If any page is selected, direct to its page
-    if page == "Login": 
-        login_page(bank) # redirect to login page
+    page = navigate()
+    if page == "Login":
+        # Print login page
+        login_page(bank)
     elif page == "Register":
-        register_page(bank) # redirect to register page
+        # Print register page
+        register_page(bank)
     elif page == "Dashboard":
-        dashboard_page(bank) # # redirect to dashboard page
+        # Print dashboard page
+        dashboard_page(bank)
     elif page == "Transfer" :
-        transfer_page(bank) # redirect to transfer page
+        # Print transfer page
+        transfer_page(bank)
     elif page == "Deposit":
-        deposit_page(bank) # redirect to deposit page
+        # Print deposit page
+        deposit_page(bank)
     elif page == "Withdraw":
-        withdraw_page(bank) # redirect to withdraw page
+        # Print withdraw page
+        withdraw_page(bank)
     elif page == "Logout":
-        show_logout(bank) # redirect to logout page
-        
-# Call main page as an entry point to the app
+        # Print logout page
+        show_logout(bank)      
+# Run the main method
 if __name__ == "__main__":
     main()
-
-    
